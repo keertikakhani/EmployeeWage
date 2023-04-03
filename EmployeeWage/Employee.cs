@@ -11,7 +11,7 @@ namespace EmployeeWage
         public static void CheckEmployee()
         {
 
-            // UC -3 calculating part time employee daily wage also
+            // UC -4 solving using switch statement
 
             const int IS_FULL_TIME = 1;
             const int IS_PART_TIME = 2;
@@ -22,20 +22,21 @@ namespace EmployeeWage
             Random random = new Random();
             int employeeCheck = random.Next(3);
 
-            if (employeeCheck == IS_FULL_TIME)
+            switch (employeeCheck)
             {
-                Console.WriteLine("Full Time Employee is present");
-                empHrs = 8;
-            }
-            else if (employeeCheck == IS_PART_TIME)
-            {
-                Console.WriteLine("PartTime Employee is present");
-                empHrs = 4;
-            }
-            else
-            {
-                Console.WriteLine("Employee is absent");
-                empHrs = 0;
+                case IS_FULL_TIME:
+                    Console.WriteLine("Full Time Employee is present");
+                    empHrs = 8;
+                    break;
+                case IS_PART_TIME:
+                    Console.WriteLine("PartTime Employee is present");
+                    empHrs = 4;
+                    break;
+                default:
+                    Console.WriteLine("Employee is absent");
+                    empHrs = 0;
+                    break;
+
             }
 
             empWage = empHrs * EMP_RATE_PER_HR;
