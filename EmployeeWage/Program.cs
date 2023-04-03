@@ -8,6 +8,7 @@ namespace EmployeeWage
         {
             Console.WriteLine("Welcome to Employee Wage Computation Program");
 
+            Employee.CheckEmployee();
 
             Console.ReadLine();
         }
